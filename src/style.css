@@ -1,12 +1,12 @@
 @font-face {
   font-family: "regular";
-  src: url('./assets/font/Inter-Regular.ttf');
+  src: url('./assets/font/Raleway-Regular.ttf');
 }
 @font-face {
   font-family: "bold";
-  src: url('./assets/font/Inter-Bold.ttf');
+  src: url('./assets/font/Raleway-Bold.ttf');
 }
 @font-face {
   font-family: "black";
-  src: url('./assets/font/Inter-Black.ttf');
+  src: url('./assets/font/Raleway-Black.ttf');
 }
