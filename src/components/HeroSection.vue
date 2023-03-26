@@ -43,15 +43,18 @@ export default defineComponent({
     </nav>
     <div class="hero-content w-full">
       <div v-if="isMobile" class="mobile-content w-full h-full relative flex items-center justify-center">
-        <div class="mobile-hero-content w-full flex flex-col items-center h-[95%] py-12">
-          <h2 class="acca-two">Web2 Tweets</h2>
-          <h2 class="acca-two">Web3 <span>Barks</span></h2>
-          <p class="acca-pi text-center mb-4">The first social network 
-  powered by Shibarium.</p>
-  <div class="hero-btns-mobile flex flex-col items-center">
-    <button class="hero-btn mb-4">View Chart</button>
-    <button class="hero-btn">Buy</button>
-  </div>
+        <div class="mobile-content w-full h-full">
+          <div class="mobile-hero-content flex flex-col items-center pt-[5%]">
+
+            <h2 class="acca-two">Web2 Tweets</h2>
+            <h2 class="acca-two">Web3 <span>Barks</span></h2>
+            <p class="acca-pi text-center mb-4">The first social network 
+    powered by Shibarium.</p>
+    <div class="hero-btns-mobile flex flex-col items-center">
+      <button class="hero-btn mb-4">View Chart</button>
+      <button class="hero-btn">Buy</button>
+    </div>
+          </div>
         </div>
         <div class="wave-wrapper absolute bottom-0 w-full flex items-center justify-center">
           <div class="contract-wrapper flex items-center">
@@ -180,5 +183,8 @@ nav {
   height: calc(100% - 75px);
   display: grid;
   grid-template-columns: 60% 40%;
+}
+.mobile-hero-content{
+  height: calc(100% - 75px);
 }
 </style>

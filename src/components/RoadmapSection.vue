@@ -19,7 +19,7 @@ setup () {
 </script>
 
 <template>
-    <section class="roadmap-section h-screen w-full lg:px-4 py-12">
+    <section class="roadmap-section w-full lg:px-4 py-12">
         <div class="w-full h-full px-4" v-if="isMobile">
             <MobileRoadmap  />
         </div>
