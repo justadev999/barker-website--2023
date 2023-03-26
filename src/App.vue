@@ -2,10 +2,11 @@
 import { defineComponent} from "vue";
 
 import HeroSection from "./components/HeroSection.vue";
+import VideoSection from "./components/VideoSection.vue";
 
 export default defineComponent({
   name: "App",
-  components: {HeroSection},
+  components: {HeroSection, VideoSection},
   setup() {
     return {};
   },
@@ -15,6 +16,7 @@ export default defineComponent({
 <template>
   <div class="main-wrapper w-full relative">
     <HeroSection />
+    <VideoSection />
   </div>
 </template>
 
