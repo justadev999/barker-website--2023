@@ -61,7 +61,20 @@ export default defineComponent({
         </div>
       </div>
       <div v-else class="desktop-content w-full h-full relative">
-        Desktop
+        <div class="desktop-hero-content w-full h-full">
+          <div class="text-wrapper flex items-start justify-center flex-col pl-12">
+            <h2 class="acca-two">Web2 Tweets, Web3 <span>Barks</span></h2>
+             <p class="acca-pi text-center mb-4">The first social network 
+  powered by Shibarium.</p>
+    <div class="flex items-center">
+    <button class="hero-btn mr-4">View Chart</button>
+    <button class="hero-btn">Buy</button>
+  </div>
+          </div>
+          <div class="image-wrapper flex items-center justify-center">
+            <img src="../assets/images/barker-hero-image.png" />
+          </div>
+        </div>
         <div class="wave-wrapper absolute bottom-0 w-full flex items-center justify-center">
           <div class="contract-wrapper flex items-center">
             <p class="contract-label mr-4">{{contractAddress}}</p>
@@ -161,5 +174,11 @@ nav {
   font-family: "bold";
   font-size: rem(25);
   border-radius: rem(50);
+}
+
+.desktop-hero-content{
+  height: calc(100% - 75px);
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 </style>
