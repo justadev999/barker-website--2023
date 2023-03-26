@@ -2,6 +2,9 @@
 import { defineComponent, computed} from 'vue'
 import { useBreakpoint } from '../functions/useBreakpoint'
 
+import MobileRoadmap from "../assets/svg/mob-roadmap.svg"
+
+
 export default defineComponent({
 name: 'RoadmapSection' ,
 // components: {MobRoadmap, DeskRoadmap},
