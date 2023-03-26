@@ -21,10 +21,16 @@ setup () {
 <template>
     <section class="roadmap-section w-full lg:px-4 py-12">
         <div class="w-full h-full px-4" v-if="isMobile">
-            <MobileRoadmap  />
+            <MobileRoadmap class="w-full h-full"  />
         </div>
         <div v-else class="w-full h-full">
-            <DesktopRoadmap />
+            <DesktopRoadmap class="w-full h-full"/>
         </div>
     </section>
 </template>
+
+<style scoped lang="scss">
+.roadmap-section{
+    outline: auto;
+}
+</style>
