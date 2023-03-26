@@ -3,10 +3,11 @@ import { defineComponent} from "vue";
 
 import HeroSection from "./components/HeroSection.vue";
 import VideoSection from "./components/VideoSection.vue";
+import ChatSection from "./components/ChatSection.vue";
 
 export default defineComponent({
   name: "App",
-  components: {HeroSection, VideoSection},
+  components: {HeroSection, VideoSection, ChatSection},
   setup() {
     return {};
   },
@@ -17,6 +18,7 @@ export default defineComponent({
   <div class="main-wrapper w-full relative">
     <HeroSection />
     <VideoSection />
+    <ChatSection />
   </div>
 </template>
 

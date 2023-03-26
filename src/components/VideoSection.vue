@@ -63,7 +63,6 @@ export default defineComponent({
 <style scoped lang="scss">
 .video-wrapper {
   @screen lg {
-    outline: auto;
     width: 100%;
     height: 100vh;
     object-fit: cover;
