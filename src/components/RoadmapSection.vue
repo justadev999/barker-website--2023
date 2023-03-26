@@ -3,11 +3,11 @@ import { defineComponent, computed} from 'vue'
 import { useBreakpoint } from '../functions/useBreakpoint'
 
 import MobileRoadmap from "../assets/svg/mob-roadmap.svg"
-import DesktopRoadmap from "../assets/svg/desk-roadmap.svg"
+// import DesktopRoadmap from "../assets/svg/desk-roadmap.svg"
 
 export default defineComponent({
 name: 'RoadmapSection' ,
-components: {MobileRoadmap, DesktopRoadmap},
+components: {MobileRoadmap},
 setup () {
     const matches = useBreakpoint()
     const isMobile = computed(() => matches.value?.beforeLg)
@@ -24,7 +24,7 @@ setup () {
             <MobileRoadmap  />
         </div>
         <div v-else class="w-full h-full">
-            <DesktopRoadmap />
+            desktop
         </div>
     </section>
 </template>
