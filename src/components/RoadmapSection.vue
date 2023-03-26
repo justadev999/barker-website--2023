@@ -30,7 +30,4 @@ setup () {
 </template>
 
 <style scoped lang="scss">
-.roadmap-section{
-    outline: auto;
-}
 </style>
