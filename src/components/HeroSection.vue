@@ -4,18 +4,25 @@ import {useBreakpoint} from "../functions/useBreakpoint"
 import Logo from "../assets/svg/barker-logo.svg"
 import Copy from "../assets/svg/copy-icon.svg"
 
+import gsap from "gsap";
+
 export default defineComponent({
   name: "HeroSection",
   components: {Logo, Copy},
   emits: ["open"],
   setup(props, {emit}){
     const contractAddress = ref('0xe924dd20c41bb088f1b8557ca8fc5de99d1b4da8')
+    const isCopied = ref(false)
 
     const matches = useBreakpoint()
     const isMobile = computed(() => matches.value?.beforeLg)
 
     const copyContract = () => {
       navigator.clipboard.writeText(contractAddress.value)
+      isCopied.value = true
+      setTimeout(() => {
+        isCopied.value = false
+      }, 1000)
     }
 
     const openMenu = () => {
@@ -26,7 +33,8 @@ export default defineComponent({
       isMobile,
       contractAddress,
       copyContract,
-      openMenu
+      openMenu,
+      isCopied
     }
   }
 });
@@ -64,6 +72,7 @@ export default defineComponent({
         </div>
         <div class="wave-wrapper absolute bottom-0 w-full flex items-center justify-center">
           <div class="contract-wrapper flex items-center">
+            <div v-if="isCopied" class="copied-wrapper flex items-center justify-center absolute top-[-70px] left-0 right-0 mr-auto ml-auto">Copied</div>
             <p class="contract-label mr-4">{{contractAddress}}</p>
             <Copy class="copy-logo" @click="copyContract()" />
           </div>
@@ -85,7 +94,8 @@ export default defineComponent({
           </div>
         </div>
         <div class="wave-wrapper absolute bottom-0 w-full flex items-center justify-center">
-          <div class="contract-wrapper flex items-center">
+          <div class="contract-wrapper flex items-center relative">
+            <div v-if="isCopied" class="copied-wrapper flex items-center justify-center absolute top-[-100px] left-0 right-0 mr-auto ml-auto">Copied</div>
             <p class="contract-label mr-4">{{contractAddress}}</p>
             <Copy class="copy-logo" @click="copyContract()" />
           </div>
@@ -196,6 +206,15 @@ nav {
 
 .menu-btn{
    background-color: $c-blue;
+        color: white;
+        height: rem(50);
+        width: rem(100);
+        border-radius: rem(10);
+        font-family: "bold";
+}
+
+.copied-wrapper{
+  background-color: $c-blue;
         color: white;
         height: rem(50);
         width: rem(100);
