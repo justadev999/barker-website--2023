@@ -20,7 +20,11 @@ setup () {
 
 <template>
     <section class="roadmap-section h-screen w-full lg:px-4 py-4">
-        <MobileRoadmap v-if="isMobile" />
-        <DesktopRoadmap v-if="!isMobile" />
+        <div class="w-full h-full" v-if="isMobile">
+            <MobileRoadmap  />
+        </div>
+        <div v-else class="w-full h-full">
+            <DesktopRoadmap />
+        </div>
     </section>
 </template>
