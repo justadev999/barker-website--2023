@@ -1,11 +1,9 @@
 <script>
 import { defineComponent, computed} from 'vue'
-
 import MobRoadmap from "../assets/svg/mob-roadmap.svg"
 import DeskRoadmap from "../assets/svg/desk-roadmap.svg"
-
-
 import { useBreakpoint } from '../functions/useBreakpoint'
+
 export default defineComponent({
 name: 'RoadmapSection' ,
 components: {MobRoadmap, DeskRoadmap},
@@ -25,7 +23,3 @@ setup () {
         <DeskRoadmap v-if="!isMobile" class="w-full h-full" />
     </section>
 </template>
-
-<style scoped>
-
-</style>
