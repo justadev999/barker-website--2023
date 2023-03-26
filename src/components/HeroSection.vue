@@ -42,8 +42,17 @@ export default defineComponent({
       </div>
     </nav>
     <div class="hero-content w-full">
-      <div v-if="isMobile" class="mobile-content w-full h-full relative">
-        Mobile
+      <div v-if="isMobile" class="mobile-content w-full h-full relative flex items-center justify-center">
+        <div class="mobile-hero-content w-full flex flex-col items-center h-[95%] py-12">
+          <h2 class="acca-two">Web2 Tweets</h2>
+          <h2 class="acca-two">Web3 <span>Barks</span></h2>
+          <p class="acca-pi text-center mb-4">The first social network 
+  powered by Shibarium.</p>
+  <div class="hero-btns-mobile flex flex-col items-center">
+    <button class="hero-btn mb-4">View Chart</button>
+    <button class="hero-btn">Buy</button>
+  </div>
+        </div>
         <div class="wave-wrapper absolute bottom-0 w-full flex items-center justify-center">
           <div class="contract-wrapper flex items-center">
             <p class="contract-label mr-4">{{contractAddress}}</p>
@@ -128,5 +137,29 @@ nav {
 .copy-logo{
   height: rem(25);
   cursor: pointer;
+}
+
+.acca-two{
+  font-size: rem(50);
+  font-family: "black";
+
+  span {
+    color: $c-blue;
+  }
+}
+
+.acca-pi{
+  font-size: rem(30);
+  font-family: "regular";
+}
+
+.hero-btn{
+  height: rem(65);
+  width: rem(205);
+  background-color: $c-blue;
+  color: white;
+  font-family: "bold";
+  font-size: rem(25);
+  border-radius: rem(50);
 }
 </style>
