@@ -4,11 +4,17 @@ import {useBreakpoint} from "../functions/useBreakpoint"
 import Logo from "../assets/svg/barker-logo.svg"
 import Copy from "../assets/svg/copy-icon.svg"
 
-import gsap from "gsap";
+//ICONS
+import Dex from "../assets/svg/icons/dex-icon.svg"
+import Uni from "../assets/svg/icons/uni-icon.svg"
+import Eth from "../assets/svg/icons/ether-icon.svg"
+import Tg from "../assets/svg/icons/tg-icon.svg"
+import Tw from "../assets/svg/icons/twitter-icon.svg"
+import Ig from "../assets/svg/icons/ig-icon.svg"
 
 export default defineComponent({
   name: "HeroSection",
-  components: {Logo, Copy},
+  components: {Logo, Copy, Dex, Uni, Tg, Tw, Ig, Eth},
   emits: ["open"],
   setup(props, {emit}){
     const contractAddress = ref('0xe924dd20c41bb088f1b8557ca8fc5de99d1b4da8')
@@ -48,10 +54,24 @@ export default defineComponent({
         <h1 class="text-logo">Barker</h1>
       </div>
       <div class="icons-container flex items-center">
-        <div class="icon" v-if="!isMobile"></div>
-        <div class="icon" v-if="!isMobile"></div>
-        <div class="icon" v-if="!isMobile"></div>
-        <div class="icon" v-if="!isMobile"></div>
+        <button v-if="!isMobile" class="mr-4">
+          <Dex class="icon"/>
+        </button>
+        <button v-if="!isMobile">
+          <Uni class="icon mr-4"/>
+        </button>
+        <button v-if="!isMobile">
+          <Eth class="icon mr-4"/>
+        </button>
+        <button v-if="!isMobile">
+          <Tg class="icon mr-4"/>
+        </button>
+        <button v-if="!isMobile">
+          <Tw class="icon mr-4"/>
+        </button>
+        <button v-if="!isMobile">
+          <Ig class="icon"/>
+        </button>
         <button v-if="isMobile" class="menu-btn" @click="openMenu()">Menu</button>
       </div>
     </nav>
@@ -132,10 +152,12 @@ nav {
 }
 
 .icon {
-  background-color: $c-blue;
-  height: rem(50);
-  width: rem(50);
-  border-radius: rem(100);
+  height: rem(30);
+  transition: all .15 ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+    transition: all .15 ease-in-out;
+  }
 }
 
 .icons-container .icon:not(:last-child){
