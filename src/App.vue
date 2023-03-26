@@ -4,10 +4,11 @@ import { defineComponent} from "vue";
 import HeroSection from "./components/HeroSection.vue";
 import VideoSection from "./components/VideoSection.vue";
 import ChatSection from "./components/ChatSection.vue";
+import RoadmapSection from "./components/RoadmapSection.vue";
 
 export default defineComponent({
   name: "App",
-  components: {HeroSection, VideoSection, ChatSection},
+  components: {HeroSection, VideoSection, ChatSection,RoadmapSection},
   setup() {
     return {};
   },
@@ -19,6 +20,7 @@ export default defineComponent({
     <HeroSection />
     <VideoSection />
     <ChatSection />
+    <RoadmapSection />
   </div>
 </template>
 
