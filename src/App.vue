@@ -9,7 +9,7 @@ import TokenomicsSection from "./components/TokenomicsSection.vue";
 
 export default defineComponent({
   name: "App",
-  components: {HeroSection, VideoSection, ChatSection,RoadmapSection},
+  components: {HeroSection, VideoSection, ChatSection,RoadmapSection, TokenomicsSection},
   setup() {
     return {};
   },
@@ -22,7 +22,7 @@ export default defineComponent({
     <VideoSection />
     <ChatSection />
     <RoadmapSection />
-    <!-- <TokenomicsSection /> -->
+    <TokenomicsSection />
   </div>
 </template>
 

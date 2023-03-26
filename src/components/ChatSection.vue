@@ -2,7 +2,7 @@
 import { defineComponent} from 'vue'
 
 import WhatIs from "../assets/svg/whatis-desk.svg"
-import ForShib from "../assets/svg/forshib-desk.svg"
+import ForShib from "../assets/svg/poweredbyshibarium .svg"
 import Wen from "../assets/svg/wen-desk.svg"
 export default defineComponent({
 name: 'ChatSection' ,
