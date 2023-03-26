@@ -5,10 +5,11 @@ import HeroSection from "./components/HeroSection.vue";
 import VideoSection from "./components/VideoSection.vue";
 import ChatSection from "./components/ChatSection.vue";
 import RoadmapSection from "./components/RoadmapSection.vue";
+import TokenomicsSection from "./components/TokenomicsSection.vue";
 
 export default defineComponent({
   name: "App",
-  components: {HeroSection, VideoSection, ChatSection,RoadmapSection},
+  components: {HeroSection, VideoSection, ChatSection,RoadmapSection,TokenomicsSection},
   setup() {
     return {};
   },
@@ -21,6 +22,7 @@ export default defineComponent({
     <VideoSection />
     <ChatSection />
     <RoadmapSection />
+    <TokenomicsSection />
   </div>
 </template>
 
