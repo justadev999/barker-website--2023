@@ -7,7 +7,8 @@ import Copy from "../assets/svg/copy-icon.svg"
 export default defineComponent({
   name: "HeroSection",
   components: {Logo, Copy},
-  setup(){
+  emits: ["open"],
+  setup(props, {emit}){
     const contractAddress = ref('0xe924dd20c41bb088f1b8557ca8fc5de99d1b4da8')
 
     const matches = useBreakpoint()
@@ -17,10 +18,15 @@ export default defineComponent({
       navigator.clipboard.writeText(contractAddress.value)
     }
 
+    const openMenu = () => {
+      emit('open', true)
+    }
+
     return {
       isMobile,
       contractAddress,
-      copyContract
+      copyContract,
+      openMenu
     }
   }
 });
@@ -38,7 +44,7 @@ export default defineComponent({
         <div class="icon" v-if="!isMobile"></div>
         <div class="icon" v-if="!isMobile"></div>
         <div class="icon" v-if="!isMobile"></div>
-        <button v-if="isMobile">Menu</button>
+        <button v-if="isMobile" class="menu-btn" @click="openMenu()">Menu</button>
       </div>
     </nav>
     <div class="hero-content w-full">
@@ -186,5 +192,14 @@ nav {
 }
 .mobile-hero-content{
   height: calc(100% - 75px);
+}
+
+.menu-btn{
+   background-color: $c-blue;
+        color: white;
+        height: rem(50);
+        width: rem(100);
+        border-radius: rem(10);
+        font-family: "bold";
 }
 </style>
