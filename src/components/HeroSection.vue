@@ -72,7 +72,7 @@ export default defineComponent({
         </div>
         <div class="wave-wrapper absolute bottom-0 w-full flex items-center justify-center">
           <div class="contract-wrapper flex items-center">
-            <div v-if="isCopied" class="copied-wrapper flex items-center justify-center absolute top-[-70px] left-0 right-0 mr-auto ml-auto">Copied</div>
+            <div v-if="isCopied" class="copied-wrapper flex items-center justify-center absolute top-[-50px] left-0 right-0 mr-auto ml-auto">Copied</div>
             <p class="contract-label mr-4">{{contractAddress}}</p>
             <Copy class="copy-logo" @click="copyContract()" />
           </div>
