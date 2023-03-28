@@ -1,9 +1,13 @@
 <script>
-import { defineComponent, computed} from 'vue'
+import { defineComponent, computed, ref, onMounted} from 'vue'
 import Talk from "../assets/svg/talk.svg"
 import DesktopFooter from "../assets/svg/desktop-footer.svg"
 import MobileFooter from "../assets/svg/mobile-footer.svg"
 import { useBreakpoint } from '../functions/useBreakpoint'
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default defineComponent({
 name: 'FinalSection' ,
@@ -12,15 +16,37 @@ setup(){
     const matches = useBreakpoint()
     const isMobile = computed(() => matches.value?.beforeLg)
 
+    const finalSection = ref('')
+
+  onMounted(() => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: finalSection.value,
+          start: "top center",
+        },
+      });
+      tl.fromTo(
+        ".talk",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0 }
+      );
+      tl.fromTo(
+        ".talk-form",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0 }
+      );
+    });
+
     return {
-        isMobile
+        isMobile,
+        finalSection
     }
 }
 })
 </script>
 
 <template>
-    <section class="final-section w-full relative flex flex-col items-center pt-8 lg:py-12">
+    <section ref="finalSection" class="final-section w-full relative flex flex-col items-center pt-8 lg:py-12">
         <div class="w-full flex items-end justify-end pr-4 lg:pr-44 mb-8">
             <Talk class="talk" />
         </div>

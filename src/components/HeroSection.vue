@@ -1,5 +1,5 @@
 <script>
-import { defineComponent,ref, computed } from "vue";
+import { defineComponent,ref, computed, onMounted } from "vue";
 import {useBreakpoint} from "../functions/useBreakpoint"
 import Logo from "../assets/svg/barker-logo.svg"
 import Copy from "../assets/svg/copy-icon.svg"
@@ -11,6 +11,8 @@ import Eth from "../assets/svg/icons/ether-icon.svg"
 import Tg from "../assets/svg/icons/tg-icon.svg"
 import Tw from "../assets/svg/icons/twitter-icon.svg"
 import Ig from "../assets/svg/icons/ig-icon.svg"
+
+import gsap from "gsap";
 
 export default defineComponent({
   name: "HeroSection",
@@ -30,6 +32,11 @@ export default defineComponent({
         isCopied.value = false
       }, 1000)
     }
+
+    onMounted(() => {
+      const tl = gsap.timeline()
+      tl.fromTo('.hero-section', {opacity:0, y:50}, {opacity:1, y:0})
+    })
 
     const openMenu = () => {
       emit('open', true)
@@ -215,6 +222,13 @@ nav {
   font-family: "bold";
   font-size: rem(25);
   border-radius: rem(50);
+  transition: all .15s ease-in;
+
+  &:hover {
+    color: $c-blue;
+    background-color: transparent;
+    border: 1px solid $c-blue;
+  }
 }
 
 .desktop-hero-content{

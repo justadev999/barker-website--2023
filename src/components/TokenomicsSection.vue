@@ -1,9 +1,13 @@
 <script>
-import { defineComponent, computed} from 'vue'
+import { defineComponent, computed, ref, onMounted} from 'vue'
 import MobTokenomics from "../assets/svg/tokenomics-mob.svg"
 import DeskTokenomics from "../assets/svg/tokenomics-desk.svg"
 
 import { useBreakpoint } from '../functions/useBreakpoint'
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default defineComponent({
 name: 'TokenomicsSection' ,
@@ -11,16 +15,33 @@ components: {MobTokenomics, DeskTokenomics},
 setup () {
     const matches = useBreakpoint()
     const isMobile = computed(() => matches.value?.beforeLg)
+
+     const tokenomicsSection = ref('')
+
+  onMounted(() => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: tokenomicsSection.value,
+          start: "top center",
+        },
+      });
+      tl.fromTo(
+        ".toke",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0 }
+      );
+    });
     return {
-        isMobile
+        isMobile,
+        tokenomicsSection
     }
 }
 })
 </script>
 
 <template>
-    <section class="roadmap-section h-screen w-full lg:px-4 py-4">
-        <MobTokenomics v-if="isMobile" class="w-full h-full" />
-        <DeskTokenomics v-if="!isMobile" class="w-full h-full" />
+    <section ref="tokenomicsSection" class="roadmap-section h-screen w-full lg:px-4 py-4">
+        <MobTokenomics v-if="isMobile" class="toke w-full h-full" />
+        <DeskTokenomics v-if="!isMobile" class="toke w-full h-full" />
     </section>
 </template>
