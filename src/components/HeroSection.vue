@@ -20,7 +20,7 @@ export default defineComponent({
   components: {Logo, Copy, Dex, Uni, Tg, Tw, Ig, Eth},
   emits: ["open"],
   setup(props, {emit}){
-    const contractAddress = ref('0xe924dd20c41bb088f1b8557ca8fc5de99d1b4da8')
+    const contractAddress = ref('Stealth Launching soon')
     const isCopied = ref(false)
 
     const matches = useBreakpoint()
