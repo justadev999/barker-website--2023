@@ -20,7 +20,7 @@ export default defineComponent({
   components: {Logo, Copy, Dex, Uni, Tg, Tw, Ig, Eth},
   emits: ["open"],
   setup(props, {emit}){
-    const contractAddress = ref('Stealth Launching soon')
+    const contractAddress = ref('0xb4214a9ce624ec9c32df9a1c8bf2e7d575d47e58')
     const isCopied = ref(false)
 
     const matches = useBreakpoint()
@@ -73,13 +73,13 @@ export default defineComponent({
       </div>
       <div class="icons-container flex items-center">
         <button v-if="!isMobile" class="mr-4">
-          <Dex class="icon"/>
+          <Dex @click="navigate('https://www.dextools.io/app/en/ether/pair-explorer/0xae0e635d0263ac0326ff67328db67d60e4a731a6')" class="icon"/>
         </button>
         <button v-if="!isMobile">
-          <Uni class="icon mr-4"/>
+          <Uni @click="navigate('')" class="icon mr-4"/>
         </button>
         <button v-if="!isMobile">
-          <Eth class="icon mr-4"/>
+          <Eth @click="navigate('https://etherscan.io/token/0xb4214a9ce624ec9c32df9a1c8bf2e7d575d47e58#code')" class="icon mr-4"/>
         </button>
         <button v-if="!isMobile">
           <Tg @click="navigate('http://t.me/barkerportal')" class="icon mr-4"/>
