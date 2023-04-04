@@ -33,10 +33,13 @@ navigate
         </div>
         <ul class="w-full flex flex-col items-center">
             <li>
-                <button>Contract</button>
+                <button @click="navigate('')">Contract</button>
             </li>
             <li>
-                <button>Uniswap</button>
+                <button @click="navigate('')">Uniswap</button>
+            </li>
+            <li>
+                <button @click="navigate('')">Chart</button>
             </li>
             <li>
                 <button @click="navigate('http://t.me/barkerportal')" >Telegram</button>
