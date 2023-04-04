@@ -101,7 +101,7 @@ export default defineComponent({
 
             <h2 class="acca-two">Web2 Tweets</h2>
             <h2 class="acca-two">Web3 <span>Barks</span></h2>
-            <p class="acca-pi text-center mb-4">Your keys? Your profile. Empowering the decentralized generation</p>
+            <p class="acca-pi text-center mb-4">Your keys? Your profiles. Empowering the decentralized generation</p>
     <div class="hero-btns-mobile flex flex-col items-center">
       <button class="hero-btn mb-4">View Chart</button>
       <button class="hero-btn">Buy</button>
@@ -120,7 +120,7 @@ export default defineComponent({
         <div class="desktop-hero-content w-full h-full">
           <div class="text-wrapper flex items-start justify-center flex-col pl-12">
             <h2 class="acca-two">Web2 Tweets, Web3 <span>Barks</span></h2>
-             <p class="acca-pi text-center mb-4">Your keys? Your profile. </p>
+             <p class="acca-pi text-center mb-4">Your keys? Your profiles. </p>
              <p class="acca-pi">Empowering the decentralized generation</p>
     <div class="flex items-center">
     <button class="hero-btn mr-4">View Chart</button>
