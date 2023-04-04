@@ -3,7 +3,7 @@ import { defineComponent, computed, ref, onMounted} from 'vue'
 import { useBreakpoint } from '../functions/useBreakpoint'
 
 import MobileRoadmap from "../assets/svg/mob-roadmap.svg"
-import DesktopRoadmap from "../assets/svg/desktop-roadmap.svg"
+import DesktopRoadmap from "../assets/svg/new-des-road.svg"
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
