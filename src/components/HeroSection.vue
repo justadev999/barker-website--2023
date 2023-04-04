@@ -1,6 +1,7 @@
 <script>
 import { defineComponent,ref, computed, onMounted } from "vue";
 import {useBreakpoint} from "../functions/useBreakpoint"
+import router from "../router";
 import Logo from "../assets/svg/barker-logo.svg"
 import Copy from "../assets/svg/copy-icon.svg"
 
@@ -42,12 +43,17 @@ export default defineComponent({
       emit('open', true)
     }
 
+    const pushDapp = () => {
+      router.push({ path: '/dapp' })
+    }
+
     return {
       isMobile,
       contractAddress,
       copyContract,
       openMenu,
-      isCopied
+      isCopied,
+      pushDapp
     }
   }
 });
@@ -79,7 +85,7 @@ export default defineComponent({
         <button v-if="!isMobile">
           <Ig class="icon mr-4"/>
         </button>
-        <button class="dapp-btn" v-if="!isMobile">Launch Barker</button>
+        <button class="dapp-btn" v-if="!isMobile" @click="pushDapp()">Launch Barker</button>
         <button v-if="isMobile" class="menu-btn" @click="openMenu()">Menu</button>
       </div>
     </nav>

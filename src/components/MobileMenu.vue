@@ -1,5 +1,7 @@
 <script>
 import { defineComponent} from 'vue'
+import router from "../router";
+
 export default defineComponent({
 name: 'MobileMenu',
 emits: ["close"],
@@ -7,8 +9,13 @@ setup(props, {emit}){
     const closeMenu = () => {
         emit('close', false)
     }
+
+    const pushDapp = () => {
+      router.push({ path: '/dapp' })
+    }
     return {
-closeMenu
+closeMenu,
+pushDapp
     }
 }
 })
@@ -39,7 +46,7 @@ closeMenu
                 <button>Instagram</button>
             </li>
             <li>
-                <button class="dapp-btn" v-if="!isMobile">Launch Barker</button>
+                <button class="dapp-btn" v-if="!isMobile" @click="pushDapp()">Launch Barker</button>
             </li>
         </ul>
     </section>
