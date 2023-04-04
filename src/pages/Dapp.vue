@@ -1,6 +1,8 @@
 <script>
 import { defineComponent, ref, watch} from 'vue'
 import Logo from "../assets/svg/barker-logo.svg"
+import router from "../router";
+
 
 //ICONS
 import Dex from "../assets/svg/icons/dex-icon.svg"
@@ -29,10 +31,15 @@ setup(){
         }
     })
 
+    const backHome = () => {
+      router.push({ path: '/' })
+    }
+
     return {
         openMetamask,
         account,
-        isListed
+        isListed,
+        backHome
     }
 }
 })
@@ -55,12 +62,13 @@ setup(){
         </button>
     </div>
     <h1 class="mb-4 text-center">Enroll as early beta tester</h1>
-    <button class="sign-btn" @click="openMetamask()">Sign-up with metamask</button>
+    <button class="sign-btn mb-8" @click="openMetamask()">Sign-up with metamask</button>
     <div v-if="isListed" class="listed-wrapper flex flex-col items-center justify-center absolute bottom-[5%]">
         <p>Account</p>
         <p>{{ account }}</p>
         <p>Is now listed</p>
     </div>
+    <button class="back-btn" @click="backHome()">Back Home</button>
 </div>
 </template>
 
@@ -108,6 +116,20 @@ h1 {
         border: 2px solid $c-blue;
       background-color: transparent;
       color: black;
+    }
+
+}
+.back-btn{
+      border: 2px solid $c-blue;
+    background-color: transparent;
+  color: $c-blue;
+    font-family: "bold";
+    padding: rem(10);
+    transition: all .12 ease-in-out;
+
+    &:hover{
+      background-color: $c-blue;
+      color: white;
     }
 
 }
