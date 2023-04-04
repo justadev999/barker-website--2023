@@ -92,12 +92,11 @@ export default defineComponent({
     <div class="hero-content w-full">
       <div v-if="isMobile" class="mobile-content w-full h-full relative flex items-center justify-center">
         <div class="mobile-content w-full h-full">
-          <div class="mobile-hero-content flex flex-col items-center pt-[5%]">
+          <div class="mobile-hero-content flex flex-col items-center pt-[5%] px-4">
 
             <h2 class="acca-two">Web2 Tweets</h2>
             <h2 class="acca-two">Web3 <span>Barks</span></h2>
-            <p class="acca-pi text-center mb-4">The first social network 
-    powered by Shibarium.</p>
+            <p class="acca-pi text-center mb-4">Your keys? Your profile. Empowering the decentralized generation</p>
     <div class="hero-btns-mobile flex flex-col items-center">
       <button class="hero-btn mb-4">View Chart</button>
       <button class="hero-btn">Buy</button>
@@ -116,8 +115,8 @@ export default defineComponent({
         <div class="desktop-hero-content w-full h-full">
           <div class="text-wrapper flex items-start justify-center flex-col pl-12">
             <h2 class="acca-two">Web2 Tweets, Web3 <span>Barks</span></h2>
-             <p class="acca-pi text-center mb-4">The first social network 
-  powered by Shibarium.</p>
+             <p class="acca-pi text-center mb-4">Your keys? Your profile. </p>
+             <p class="acca-pi">Empowering the decentralized generation</p>
     <div class="flex items-center">
     <button class="hero-btn mr-4">View Chart</button>
     <button class="hero-btn">Buy</button>
@@ -217,8 +216,15 @@ nav {
 }
 
 .acca-pi{
-  font-size: rem(30);
+  font-size: rem(20);
   font-family: "regular";
+  
+
+  @media(min-width:1024px){
+    font-size: rem(30);
+    line-height: .9;
+    margin-bottom: rem(16);
+  }
 }
 
 .hero-btn{
