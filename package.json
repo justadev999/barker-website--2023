@@ -13,7 +13,8 @@
     "gsap": "^3.11.4",
     "sass": "^1.57.1",
     "vite-svg-loader": "^4.0.0",
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

@@ -38,6 +38,9 @@ closeMenu
             <li>
                 <button>Instagram</button>
             </li>
+            <li>
+                <button class="dapp-btn" v-if="!isMobile">Launch Barker</button>
+            </li>
         </ul>
     </section>
 </template>
@@ -66,5 +69,19 @@ ul li {
 
 ul li:not(:last-child){
     margin-bottom: rem(16);
+}
+
+.dapp-btn{
+  border: 3px solid white;
+  color: white;
+    font-family: "bold";
+    padding: rem(6);
+    transition: all .12 ease-in-out;
+
+    &:hover{
+      background-color: $c-blue;
+      color: white;
+    }
+
 }
 </style>

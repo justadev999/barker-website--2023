@@ -77,8 +77,9 @@ export default defineComponent({
           <Tw class="icon mr-4"/>
         </button>
         <button v-if="!isMobile">
-          <Ig class="icon"/>
+          <Ig class="icon mr-4"/>
         </button>
+        <button class="dapp-btn" v-if="!isMobile">Launch Barker</button>
         <button v-if="isMobile" class="menu-btn" @click="openMenu()">Menu</button>
       </div>
     </nav>
@@ -256,5 +257,19 @@ nav {
         width: rem(100);
         border-radius: rem(10);
         font-family: "bold";
+}
+
+.dapp-btn{
+  border: 3px solid $c-blue;
+  color: black;
+    font-family: "bold";
+    padding: rem(6);
+    transition: all .12 ease-in-out;
+
+    &:hover{
+      background-color: $c-blue;
+      color: white;
+    }
+
 }
 </style>
