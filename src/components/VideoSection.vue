@@ -53,7 +53,7 @@ export default defineComponent({
       autoplay
     >
       <source
-        src="../assets/video/barker-video.mp4"
+        src="../assets/video/Barkeranimatedmockup.mp4"
         type="video/mp4"
       />
     </video>
