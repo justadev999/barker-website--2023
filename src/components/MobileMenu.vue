@@ -13,9 +13,14 @@ setup(props, {emit}){
     const pushDapp = () => {
       router.push({ path: '/dapp' })
     }
+
+    const navigate = link => {
+      window.open(link, "_blank")
+    }
     return {
 closeMenu,
-pushDapp
+pushDapp,
+navigate
     }
 }
 })
@@ -34,16 +39,13 @@ pushDapp
                 <button>Uniswap</button>
             </li>
             <li>
-                <button>Telegram</button>
+                <button @click="navigate('http://t.me/barkerportal')" >Telegram</button>
             </li>
             <li>
-                <button>Twitter</button>
+                <button @click="navigate('https://twitter.com/barkertoken/')">Twitter</button>
             </li>
             <li>
-                <button>Medium</button>
-            </li>
-            <li>
-                <button>Instagram</button>
+                <button @click="navigate('https://www.instagram.com/barkertoken/')">Instagram</button>
             </li>
             <li>
                 <button class="dapp-btn" v-if="!isMobile" @click="pushDapp()">Launch Barker</button>

@@ -47,13 +47,18 @@ export default defineComponent({
       router.push({ path: '/dapp' })
     }
 
+    const navigate = link => {
+      window.open(link, "_blank")
+    }
+
     return {
       isMobile,
       contractAddress,
       copyContract,
       openMenu,
       isCopied,
-      pushDapp
+      pushDapp, 
+      navigate
     }
   }
 });
@@ -77,13 +82,13 @@ export default defineComponent({
           <Eth class="icon mr-4"/>
         </button>
         <button v-if="!isMobile">
-          <Tg class="icon mr-4"/>
+          <Tg @click="navigate('http://t.me/barkerportal')" class="icon mr-4"/>
         </button>
         <button v-if="!isMobile">
-          <Tw class="icon mr-4"/>
+          <Tw @click="navigate('https://twitter.com/barkertoken/')" class="icon mr-4"/>
         </button>
         <button v-if="!isMobile">
-          <Ig class="icon mr-4"/>
+          <Ig @click="navigate('https://www.instagram.com/barkertoken/')" class="icon mr-4"/>
         </button>
         <button class="dapp-btn" v-if="!isMobile" @click="pushDapp()">Launch Barker</button>
         <button v-if="isMobile" class="menu-btn" @click="openMenu()">Menu</button>
