@@ -1,7 +1,7 @@
 <script>
 import { defineComponent, computed, ref, onMounted} from 'vue'
-import MobTokenomics from "../assets/svg/tokenomics-mob.svg"
-import DeskTokenomics from "../assets/svg/tokenomics-desk.svg"
+import MobTokenomics from "../assets/svg/new-toke-mobile.svg"
+import DeskTokenomics from "../assets/svg/barker-new-tokenomics.svg"
 
 import { useBreakpoint } from '../functions/useBreakpoint'
 
