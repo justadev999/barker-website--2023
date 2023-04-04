@@ -42,17 +42,8 @@ setup(){
 <div class='dapp-container w-full flex flex-col items-center pt-4 lg:py-8 px-4 relative'>
     <Logo class="barker-logo mb-4" />
     <h2 class="text-center lg:w-[50%]">We're just about done developing Barker and it should be hitting the market soon! In the meantime </h2>
-    <h1 class="mb-4">Follow Barker</h1>
+    <h1 class="mb-4">Follow us</h1>
     <div class="flex items-center mb-4">
-         <button v-if="!isMobile" class="mr-4">
-          <Dex class="icon"/>
-        </button>
-        <button v-if="!isMobile">
-          <Uni class="icon mr-4"/>
-        </button>
-        <button v-if="!isMobile">
-          <Eth class="icon mr-4"/>
-        </button>
         <button v-if="!isMobile">
           <Tg class="icon mr-4"/>
         </button>
